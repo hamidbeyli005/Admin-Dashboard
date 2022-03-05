@@ -15,7 +15,7 @@
   --color-background: #f6f6f9;
 
   --card-border-radius: 2rem;
-  --border-radius-1: 0.4rem;
+  --border-radius-1: 0.5rem;
   --border-radius-2: 0.8rem;
   --border-radius-3: 1.2rem;
 
@@ -44,6 +44,7 @@ body {
   user-select: none;
   font-size: 0.88rem;
   background: var(--color-background);
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 
@@ -100,9 +101,9 @@ b {
 .warning {
   color: var(--color-warning);
 }
-.containerMain{
+.containerMain {
   display: grid;
-  grid-template-columns: 14rem auto 23rem;
+  grid-template-columns: 14rem auto 21rem;
   width: 96%;
   margin: 0 auto;
   gap: 1.8rem;
@@ -122,8 +123,8 @@ aside .top {
   margin-top: 1rem;
   padding: 0 0.5rem 0 1rem;
 }
-aside .top .close{
-display: none;   
+aside .top .close {
+  display: none;
 }
 
 aside .sideBar {
@@ -139,8 +140,8 @@ aside h3 {
   font-size: 0.9rem;
 }
 aside .sideBar a {
-margin-left: 2rem;
-    display: flex;
+  margin-left: 2rem;
+  display: flex;
   gap: 1rem;
   color: var(--color-info-dark);
   align-items: center;
@@ -151,7 +152,6 @@ margin-left: 2rem;
 aside .sideBar span {
   font-size: 1.6rem;
   transition: all 300ms ease;
-
 }
 aside .sideBar a:last-child {
   position: absolute;
@@ -172,169 +172,159 @@ aside .sideBar a.active {
   background: var(--color-light);
   margin-left: 0;
 }
-aside .sideBar a.active span{
-    margin-left: calc(1rem - 6px);
+aside .sideBar a.active span {
+  margin-left: calc(1rem - 6px);
 }
 
- aside .sideBar a.active:before{
-    content: "";
-    height: 100%;
-    width: 6px;
-    background: var(--color-primary);
-} 
-aside .sideBar a:hover span{
-    margin-left: 1rem;
+aside .sideBar a.active:before {
+  content: "";
+  height: 100%;
+  width: 6px;
+  background: var(--color-primary);
+}
+aside .sideBar a:hover span {
+  margin-left: 1rem;
 }
 
-
-.mainTop h1{
-  margin-top:0.7rem ;
+.mainTop h1 {
+  margin-top: 0.7rem;
   color: var(--color-dark);
-  padding-bottom:.6rem ;
+  padding-bottom: 0.6rem;
 }
 .mainTop .date {
   display: inline-block;
   background: var(--color-light);
-  padding:.2rem 0;
+  padding: 0.2rem 0;
   border-radius: var(--border-radius-1);
-
 }
 .mainTop .date input[type="date"] {
   color: var(--color-dark);
   background: transparent;
   padding-left: 2rem;
   font-size: 1.1rem;
-
 }
 
-.salesCards{
-display: grid;
-grid-template-columns:repeat( 4,1fr);
-gap: 1.3rem;
+.salesCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
 }
-.salesCards .salesCard{
- 
-  background-color:var(--color-white);
+.salesCards .salesCard {
+  background-color: var(--color-white);
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
   margin-top: 1rem;
   box-shadow: var(--box-shadow);
   transition: all 300ms ease;
   position: relative;
-
 }
-.salesCards .salesCard:hover{
+.salesCards .salesCard:hover {
   box-shadow: none;
 }
-.salesCards .salesCard .cardLeft span{
+.salesCards .salesCard .cardLeft span {
   background: var(--color-primary);
-  color:var(--color-white);
-  font-size:2rem;
+  color: var(--color-white);
+  font-size: 2rem;
   padding: 10px;
-  border-radius:50%;
+  border-radius: 50%;
   margin-bottom: 1rem;
-
 }
-.salesCards .salesCard .cardLeft .expenses{
+.salesCards .salesCard .cardLeft .expenses {
   background: var(--color-danger);
-  color:var(--color-white);
+  color: var(--color-white);
 }
 
-.salesCards .salesCard .cardLeft .income{
+.salesCards .salesCard .cardLeft .income {
   background: var(--color-success);
-  color:var(--color-white);
+  color: var(--color-white);
 }
-.salesCards .salesCard .cardLeft h2{
+.salesCards .salesCard .cardLeft h2 {
   color: var(--color-dark);
 }
-.salesCards .salesCard .cardLeft h1{
-  margin-top: .7rem;
+.salesCards .salesCard .cardLeft h1 {
+  margin-top: 0.7rem;
   color: var(--color-dark);
-
 }
-.salesCards .salesCard .cardLeft p{
+.salesCards .salesCard .cardLeft p {
   position: absolute;
   bottom: 15px;
 }
-.salesCard .card{
+.salesCard .card {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.card .cardRight{
+.card .cardRight {
   position: relative;
   right: -15px;
 }
-.card .cardRight .number{
+.card .cardRight .number {
   position: absolute;
-  top:-5px;
-  left:-3px;
+  top: -5px;
+  left: -3px;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-
-.cardRight svg{
+.cardRight svg {
   width: 7rem;
   height: 7rem;
 }
-.cardRight svg circle{
+.cardRight svg circle {
   fill: none;
   stroke: var(--color-primary);
   stroke-width: 14;
   stroke-linecap: round;
-  transform: translate(5px,5px);
+  transform: translate(5px, 5px);
   stroke-dasharray: 230;
   stroke-dashoffset: -40;
 }
-.cardRight svg .expenses{
+.cardRight svg .expenses {
   stroke-dasharray: 80;
   stroke-dashoffset: 18;
 }
-.cardRight svg .income{
+.cardRight svg .income {
   stroke-dasharray: 115;
   stroke-dashoffset: 35;
 }
-.bottom h1{
-  margin:1rem 0 0.2rem 0;
+.bottom h1 {
+  margin: 1rem 0 0.2rem 0;
   color: var(--color-dark);
+  font-size: 1.4rem;
 }
 
-.bottom table{
+.bottom table {
   background: var(--color-white);
   border-radius: var(--card-border-radius);
   box-shadow: var(--box-shadow);
   padding: 1.3rem 2rem;
-  width: calc(100% - 1.3rem);
+  width: 100%;
   transition: all 300ms ease;
   text-align: center;
 }
-.bottom table:hover{
-  box-shadow: none
+.bottom table:hover {
+  box-shadow: none;
 }
-.bottom table tbody td{
+.bottom table tbody td {
   height: 2.7rem;
   border-bottom: 1px solid var(--color-light);
   font-size: 1rem;
 }
-.bottom table tbody tr:last-child td{
+.bottom table tbody tr:last-child td {
   border-bottom: none;
 }
-.bottom table tbody tr td:last-child:hover{
+.bottom table tbody tr td:last-child:hover {
   cursor: pointer;
   text-decoration: underline;
 }
-.bottom table thead tr th{
+.bottom table thead tr th {
   font-size: 1.1rem;
   color: var(--color-dark);
-  
 }
-.bottom a{
+.bottom a {
   text-align: center;
   display: block;
   margin: 1rem auto;
@@ -343,3 +333,146 @@ gap: 1.3rem;
   font-size: 1rem;
 }
 
+/* right component */
+
+.rightTop {
+  margin-top: 1rem;
+  /* padding-right: 5rem; */
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+  background: var(--color-background);
+}
+
+.menuButton {
+  background: none;
+  display: none;
+}
+.themeButton {
+  background: var(--color-info-light);
+  width: 5rem;
+  height: 100%;
+  display: flex;
+  border-radius: 0.6rem;
+  justify-content: space-around;
+}
+.themeButton span {
+  font-size: 1.3rem;
+  border-radius: 0.6rem;
+  padding: 4px 0.6rem;
+  cursor: pointer;
+}
+.themeButton span.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.profile .profile-name {
+  font-weight: 700;
+}
+.profile {
+  display: flex;
+  text-align: right;
+  gap: 1rem;
+}
+.right h1 {
+  color: var(--color-dark);
+  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+}
+.recent-card {
+  background: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: 1rem 1.6rem;
+  box-shadow: var(--box-shadow);
+  font-size: 0.85rem;
+}
+.recent-card:hover {
+  box-shadow: none;
+}
+.recent-card .card-item {
+  margin-bottom: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+.recent-card .card-item:last-child {
+  margin-bottom: 0;
+}
+
+.recent-card .card-item .recent-card-info {
+  margin: 0 0.8rem 0 0.5rem;
+}
+.recent-card .card-item .recent-card-info p:last-child {
+  position: relative;
+  bottom: -1px;
+}
+/* right - bottom */
+
+.analyticsCards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+h1.sales {
+  padding-top: 0.5rem;
+}
+.analyticsCards .analyticsCard {
+  padding: 0.85rem 1.3rem;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--box-shadow);
+  display: grid;
+  grid-template-columns: 1rem auto 2rem 2.5rem;
+  gap: 1.7rem;
+  /* justify-content: center; */
+  align-items: center;
+}
+.analyticsCards .analyticsCard:hover {
+  box-shadow: none;
+}
+.analyticsCards .analyticsCard .cardIcon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: -0.4rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.analyticsCards .analyticsCard:nth-child(2) .cardIcon {
+  background: var(--color-danger);
+}
+.analyticsCards .analyticsCard:last-child .cardIcon {
+  background: var(--color-success);
+}
+.analyticsCards .analyticsCard .salesInfo {
+  left: 0.5rem;
+  position: relative;
+}
+.addProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.95rem;
+  margin-top: 1rem;
+  border: 2px dashed var(--color-primary);
+  cursor: pointer;
+  border-radius: var(--border-radius-2);
+  color: var(--color-primary);
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+.addProduct:hover {
+  box-shadow: none;
+  border: 2px dashed var(--color-danger);
+  color: var(--color-danger);
+}
+.addProduct span {
+  font-size: 2rem;
+}
+.addProduct h3 {
+  font-size: 1.1rem;
+}
