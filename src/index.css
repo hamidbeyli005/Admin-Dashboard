@@ -24,6 +24,16 @@
 
   --box-shadow: 0 2rem 3rem var(--color-light);
 }
+/* dark tema varables */
+.dark-theme-variables{
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --color-dark-variant: #a3bdcc;
+  --color-background: #181a1e;
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -44,7 +54,6 @@ body {
   user-select: none;
   font-size: 0.88rem;
   background: var(--color-background);
-  overflow-y: hidden;
   overflow-x: hidden;
 }
 
@@ -125,6 +134,7 @@ aside .top {
 }
 aside .top .close {
   display: none;
+  cursor: pointer;
 }
 
 aside .sideBar {
@@ -475,4 +485,111 @@ h1.sales {
 }
 .addProduct h3 {
   font-size: 1.1rem;
+}
+
+/* MEDİA QUERİES RESPONSİVE */
+@media screen and (max-width: 1200px) {
+  .main .salesCards {
+    grid-template-columns: 1fr;
+  }
+  aside .sideBar a h3 {
+    display: none;
+  }
+  aside .top {
+    padding: 0;
+  }
+  aside .top .logo h1 span:last-child {
+    display: none;
+  }
+  .containerMain {
+    grid-template-columns: 6rem auto 23rem;
+    width: 94%;
+    gap: 1rem;
+  }
+  .bottom {
+    position: absolute;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  aside .sideBar a h3 {
+    display: inline-block;
+  }
+  aside .top .logo h1 span:last-child {
+    display: inline-block;
+  }
+  .container {
+    width: 100%;
+  }
+  aside {
+    background: var(--color-white);
+    position: fixed;
+    z-index: 9999;
+    height: 100vh;
+    left: -100%;
+    width: 17rem;
+    display: none;
+    animation: showMenu 450ms ease forwards;
+  }
+  @keyframes showMenu {
+    to {
+      left: 0;
+    }
+  }
+
+  aside .top {
+    margin-left: 2rem;
+  }
+  aside .top .close {
+    margin: 0.35rem 0.5rem 0 0;
+    display: inline-block;
+    color: var(--color-dark);
+  }
+  .containerMain {
+    grid-template-columns: 1fr;
+    width: 94%;
+    gap: 1rem;
+  }
+  .bottom {
+    position: relative;
+    width: 100%;
+  }
+
+  .right .rightTop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0.6rem;
+    align-items: center;
+    background: var(--color-white);
+    width: 100%;
+    z-index: 3;
+    box-shadow: 0 1rem 1rem var(--color-light);
+  }
+  .profile .profie-info {
+    display: none;
+  }
+  .profile .profile-photo {
+    margin-left: 2rem;
+  }
+  .menuButton {
+    background: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-dark);
+    position: absolute;
+    left: 1.2rem;
+  }
+
+  .right h1 {
+    display: none;
+  }
+  .recent-card {
+    display: none;
+  }
+  .main {
+    padding: 5rem 2rem 0 2rem;
+  }
 }

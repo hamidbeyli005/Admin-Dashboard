@@ -2,16 +2,26 @@ import React, { Component } from "react";
 
 export default class Right extends Component {
   render() {
+    const menuButtonClick = () => {
+      const asidemenu = document.querySelector("aside");
+      asidemenu.style.display = "block";
+    };
+    const darkModeActive = () => {
+      document.body.classList.toggle("dark-theme-variables");
+    };
     return (
       <div className="right">
-        
         <div className="rightTop">
-          <button className="menuButton">
+          <button
+            onClick={() => menuButtonClick()}
+            id="menu-btn"
+            className="menuButton"
+          >
             <span class="material-icons-sharp">menu</span>
           </button>
-          <div className="themeButton">
-            <span class="material-icons-sharp active">light_mode</span>
-            <span class="material-icons-sharp ">dark_mode</span>
+          <div onClick={()=>darkModeActive()} className="themeButton">
+            <span  className="material-icons-sharp lightMode active">light_mode</span>
+            <span className="material-icons-sharp darkMode  ">dark_mode</span>
           </div>
           <div className="profile">
             <div className="profie-info">
@@ -79,7 +89,7 @@ export default class Right extends Component {
         </div>
 
         <h1 className="sales">Sales Analytics</h1>
-        
+
         <div className="analyticsCards">
           <div className="analyticsCard">
             <div className="cardIcon">
@@ -115,12 +125,11 @@ export default class Right extends Component {
             <b>782</b>
           </div>
         </div>
-        
+
         <div className="addProduct">
           <span class="material-icons-sharp">add</span>
           <h3>Add Product</h3>
         </div>
-        
       </div>
     );
   }

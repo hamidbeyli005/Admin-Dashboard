@@ -2,15 +2,22 @@ import React, { Component } from "react";
 
 export default class Left extends Component {
   render() {
+    const menuClose = () => {
+      const asidemenu = document.querySelector("aside");
+      asidemenu.style.display = "none";
+    };
     return (
       <div className="containerLeft">
         <aside>
           <div className="top">
             <div className="logo">
               {/* <img src={require("../images/logoHamid.png")} alt="" /> */}
-              <h1 className="name"><span className="danger ">.</span>Hamid<span className="danger ">beyli</span> </h1>
+              <h1 className="name">
+                <span className="danger ">.</span>Hamid
+                <span className="danger ">beyli</span>{" "}
+              </h1>
             </div>
-            <div className="close" id="close-button">
+            <div onClick={() => menuClose()} className="close" id="close-btn">
               <span class="material-icons-sharp">close</span>
             </div>
           </div>
@@ -34,13 +41,14 @@ export default class Left extends Component {
             </a>
             <a href="/#">
               <span class="material-icons-sharp">mail_outline</span>
-              <h3>Messages <span className="messageCount">23</span></h3>
+              <h3>Messages</h3>
+              <span className="messageCount">23</span>
             </a>
             <a href="/#">
               <span class="material-icons-sharp">inventory</span>
               <h3>Products</h3>
             </a>
-            
+
             <a href="/#">
               <span class="material-icons-sharp">settings</span>
               <h3>Settings</h3>
